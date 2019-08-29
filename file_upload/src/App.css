@@ -1,3 +1,37 @@
+nav {
+	display: flex;
+	background-color: black;
+	width: 100vw;
+}
+
+nav img {
+	filter: invert(1);
+	height: 30px;
+	width: 50px;
+	object-fit: contain;
+}
+
+nav ul {
+	width: 100vw;
+	padding: 0 10vw;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+nav ul div {
+	display: flex;
+}
+nav ul div li * {
+	color: white;
+	text-decoration: none;
+	margin-right: 20px;
+}
+li.logo {
+	font-size: 25px;
+}
+
+
 .hasAdvancedUpload {
 	background-color: #CCC;
 	outline: 2px dashed black;
@@ -11,6 +45,7 @@
 .hasAdvancedUpload > * {
 	display: block;
 }
+
 input[type='file'] {
   color: transparent;
 }

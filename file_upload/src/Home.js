@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './Home.css';
 import axios from 'axios';
 
 class Home extends React.Component {
@@ -40,11 +41,11 @@ class Home extends React.Component {
 	}
 
 	render() {
-		return <div>
+		return <div className="home">
 			{this.state.allUsers.map(u => {
 				if (u.Photos[0] != undefined) {
 				let liked = (u.Photos[0].Likes.find((i) => i == this.state.this_user) != undefined);
-				return <div>
+				return <div className="post">
 					<h2>{u.Username}</h2>
 					<img src={'data:' + u.Photos[0].Type + ';base64,' + u.Photos[0].Data.toString('base64')} />
 					<div className="likes">

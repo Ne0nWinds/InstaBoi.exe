@@ -1,0 +1,13 @@
+div.home{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+div.post {
+	width: 300px;
+	margin: 10px;
+}
+div.post img {
+	width: 300px;
+	height: 300px;
+}

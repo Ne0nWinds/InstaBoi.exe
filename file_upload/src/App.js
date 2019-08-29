@@ -5,13 +5,20 @@ import ImageUpload from './ImageUpload.js';
 import Login_Reg from './Login_Reg.js';
 import Profile from './Profile.js';
 import Home from './Home.js';
+import Logo from './camera-retro-solid.svg';
 
 const NavBar = () =>
 	<nav>
 		<ul>
-			<li><Link to='/'>Home</Link></li>
-			<li><Link to='/upload'>Upload Image</Link></li>
-			<li><Link to='/profile'>Profile</Link></li>
+			<div>
+				<Link to='/'><img src={Logo}/></Link>
+				<li className="logo"><Link to='/'>Instaspam</Link></li>
+			</div>
+			<div>
+				<li><Link to='/upload'>Upload Image</Link></li>
+				<li><Link to='/profile'>Profile</Link></li>
+				<li><Link to='/logout'>Sign Out</Link></li>
+			</div>
 		</ul>
 	</nav>
 
