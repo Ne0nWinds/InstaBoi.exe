@@ -11,3 +11,62 @@
 	background-color: #e0584c;
 	transition: width 0.5s ease-in-out;
 }
+
+div.image_upload {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.hasAdvancedUpload {
+	outline: 2px dashed black;
+	width: 80vw;
+	max-width: 800px;
+	height: 30vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hasAdvancedUpload > * {
+	display: block;
+}
+
+.noAdvancedUpload {
+	display: none;
+}
+
+input[type='file'] {
+  color: transparent;
+  width: 50%;
+}
+
+div.buttons {
+	display: flex;
+	padding: 20px 0;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 80vw;
+	max-width: 800px;
+}
+
+div.buttons * {
+	padding: 6px 0;
+	font-size: 16px;
+	border: 1px solid #999;
+	width: 150px;
+	text-align: center;
+}
+
+div.buttons button {
+	background-color: black;
+	color: white;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import './App.css';
+import './Login_Reg.css';
 import axios from 'axios';
 
 const Login = () => 
@@ -126,8 +127,8 @@ class Login_Reg extends React.Component {
 
 	render() {
 		if (this.state.userLoggedIn === false) {
-		return <div>
-				<h1>{(this.state.userExists === null) ?  "Sign Up Or Login" :
+		return <div className="content">
+				<h1>{(this.state.userExists === null) ?  "Sign Up or Login" :
 					(this.state.userExists) ? "Login" : "Sign Up"}</h1>
 				<form onSubmit={(this.state.userExists) ? this.handleLogin : this.handleRegistration}>
 					<input type="text" placeholder="Email / Username" onChange={this.handleLoginInfo} value={this.state.credentials} />

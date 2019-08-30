@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+//import './App.css';
 import './ImageUpload.css'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
@@ -62,19 +62,24 @@ class ImageUpload extends React.Component {
 
 	render() {
 		return (
-	  	<div className="App" >
+	  	<div className="image_upload" >
 			<div id="progress-container">
 				<div id="progress-bar" />
 			</div>
 			{(this.state.isLoggedIn === true) ?
-			<div className={this.state.hasAdvancedUpload ? 'hasAdvancedUpload' : ''} onDrop={this.dropSelectedHandler} onDragEnter={this.preventDefaults} onDragOver={this.preventDefaults} onDragLeave={this.preventDefaults}>
-			<input type="file" className="" onChange={this.fileSelectedHandler} accept="image/jpeg,image/png" />
-			<p>{(this.state.selectedFile != null) ? this.state.selectedFile.name : "No selected file"}</p>
-			<button onClick={this.fileUploadHandler}>Upload</button>
+			<div>
+				<div className={this.state.hasAdvancedUpload ? 'hasAdvancedUpload' : 'noAdvancedUpload'} onDrop={this.dropSelectedHandler} onDragEnter={this.preventDefaults} onDragOver={this.preventDefaults} onDragLeave={this.preventDefaults}>
+					<p>{(this.state.selectedFile != null) ? this.state.selectedFile.name : "Drag an image here"}</p>
+				</div>
+				<div className="buttons">
+					<label for="file">Choose a file</label>
+					<input type="file" className="inputfile" id="file" onChange={this.fileSelectedHandler} accept="image/jpeg,image/png" />
+					<button onClick={this.fileUploadHandler}>Upload</button>
+				</div>
 			</div>
-		: ""}
-		{(this.state.isLoggedIn === false) ?
-		<Redirect to='/login' /> : ""}
+			: ""}
+			{(this.state.isLoggedIn === false) ?
+			<Redirect to='/login' /> : ""}
 		</div> 
 		);
 	}

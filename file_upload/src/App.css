@@ -27,28 +27,14 @@ nav ul div li * {
 	margin-right: 10px;
 	margin-left: 10px;
 }
+nav ul div li span {
+	margin: 0;
+}
 li.logo {
 	font-size: 25px;
 }
 
 
-.hasAdvancedUpload {
-	background-color: #CCC;
-	outline: 2px dashed black;
-	outline-offset: -10px;
-	width: 50vw;
-	height: 50vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.hasAdvancedUpload > * {
-	display: block;
-}
-
-input[type='file'] {
-  color: transparent;
-}
 input {
 	display: block;
 }

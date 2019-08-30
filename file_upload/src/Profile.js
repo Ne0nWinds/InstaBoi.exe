@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import './App.css';
+import './Profile.css';
 import axios from 'axios';
 
 class Profile extends React.Component {
@@ -24,7 +25,7 @@ class Profile extends React.Component {
 	render() {
 		console.log(this.state.isLoggedIn);
 		if (this.state.isLoggedIn === true) {
-		return <div>
+		return <div className="profile">
 			{(this.state.user !== null) ?
 				<h1>{this.state.user.Username}</h1> : ""}
 			<hr />
