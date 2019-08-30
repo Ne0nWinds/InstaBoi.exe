@@ -27,9 +27,6 @@ nav ul div li * {
 	margin-right: 10px;
 	margin-left: 10px;
 }
-nav ul div li span {
-	margin: 0;
-}
 li.logo {
 	font-size: 25px;
 }
@@ -102,8 +99,5 @@ img:not([src='']) {
 	}
 	nav ul div li * {
 		margin: 0;
-	}
-	#upload-image {
-		display: none;
 	}
 }

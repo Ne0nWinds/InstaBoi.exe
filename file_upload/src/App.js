@@ -16,7 +16,7 @@ const NavBar = () =>
 				<li className="logo"><Link to='/'>Instaspam</Link></li>
 			</div>
 			<div>
-				<li><Link to='/upload'>Upload<span id="upload-image"> Image</span></Link></li>
+				<li><Link to='/upload'>Upload</Link></li>
 				<li><Link to='/profile'>Profile</Link></li>
 				<li><Link to='/logout'>Sign Out</Link></li>
 			</div>
