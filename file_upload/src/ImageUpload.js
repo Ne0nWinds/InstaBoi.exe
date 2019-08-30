@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './ImageUpload.css'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
@@ -48,9 +49,13 @@ class ImageUpload extends React.Component {
 	fileUploadHandler = () => {
 		const fd = new FormData();
 		fd.append('image', this.state.selectedFile,)
+		document.getElementById("progress-container").style.display = "block";
+		const progressBar = document.getElementById("progress-bar");
+		progressBar.style.display = "block";
 		axios.post('/upload', fd,{
 			onUploadProgress: progressEvent => {
-				console.log("Upload Progress: " + (progressEvent.loaded / progressEvent.total) * 100);
+				let progress = (progressEvent.loaded / progressEvent.total) * 100 + "%"
+				progressBar.style.width = (progressEvent.loaded / progressEvent.total) * 100 + "%";
 			}
 		}).then(res => console.log(res));
 	}
@@ -58,6 +63,9 @@ class ImageUpload extends React.Component {
 	render() {
 		return (
 	  	<div className="App" >
+			<div id="progress-container">
+				<div id="progress-bar" />
+			</div>
 			{(this.state.isLoggedIn === true) ?
 			<div className={this.state.hasAdvancedUpload ? 'hasAdvancedUpload' : ''} onDrop={this.dropSelectedHandler} onDragEnter={this.preventDefaults} onDragOver={this.preventDefaults} onDragLeave={this.preventDefaults}>
 			<input type="file" className="" onChange={this.fileSelectedHandler} accept="image/jpeg,image/png" />

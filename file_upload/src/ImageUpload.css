@@ -1,0 +1,13 @@
+#progress-container {
+	display: none;
+	position: absolute;
+	width: 100vw;
+	height: 8px;
+	background-color: transparant;
+}
+#progress-bar {
+	width: 0%;
+	height: 100%;
+	background-color: #e0584c;
+	transition: width 0.5s ease-in-out;
+}

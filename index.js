@@ -193,7 +193,7 @@ app.get('/like/:UserId/:photoId', async (request, response) => {
 		let hasLiked = false;
 		let i = 0; let len = img.Likes.length;
 		for (;i < len;i++) {
-			if (img.Likes[i] == request.params.UserId) {
+			if (img.Likes[i] == request.session.user) {
 				img.Likes.splice(i,1);
 				hasLiked = true;
 				break;
