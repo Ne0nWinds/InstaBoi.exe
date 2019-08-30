@@ -1,7 +1,6 @@
 nav {
 	display: flex;
 	background-color: black;
-	width: 100vw;
 }
 
 nav img {
@@ -12,7 +11,7 @@ nav img {
 }
 
 nav ul {
-	width: 100vw;
+	width: 100%;
 	padding: 0 10vw;
 	list-style: none;
 	display: flex;
@@ -25,7 +24,8 @@ nav ul div {
 nav ul div li * {
 	color: white;
 	text-decoration: none;
-	margin-right: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 li.logo {
 	font-size: 25px;
@@ -93,4 +93,31 @@ img:not([src='']) {
 	margin-top: 0;
 	margin-left: 3px;
 	display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+	.logo {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	nav {
+		flex-direction: column;
+		text-align: center;
+	}
+	nav ul {
+		flex-direction: column;
+		padding: 0;
+	}
+	nav ul div li {
+		width: 100px;
+		text-align: center;
+	}
+	nav ul div li * {
+		margin: 0;
+	}
+	#upload-image {
+		display: none;
+	}
 }
