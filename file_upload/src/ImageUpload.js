@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class ImageUpload extends React.Component {
 
 	state = {
 		selectedFile: null,
 		hasAdvancedUpload: false,
+		isLoggedIn: null
 	}
 
 	fileSelectedHandler = event => {
@@ -29,6 +31,11 @@ class ImageUpload extends React.Component {
 	}
 
 	componentDidMount() {
+		axios.get('/isLoggedIn')
+		.then(res => {
+			console.log(res.data.isLoggedIn)
+			this.setState({isLoggedIn: res.data.isLoggedIn});
+		});
 		let isAdvancedUpload = function() {
 			var div = document.createElement('div');
 			return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
@@ -51,12 +58,16 @@ class ImageUpload extends React.Component {
 	render() {
 		return (
 	  	<div className="App" >
+			{(this.state.isLoggedIn === true) ?
 			<div className={this.state.hasAdvancedUpload ? 'hasAdvancedUpload' : ''} onDrop={this.dropSelectedHandler} onDragEnter={this.preventDefaults} onDragOver={this.preventDefaults} onDragLeave={this.preventDefaults}>
 			<input type="file" className="" onChange={this.fileSelectedHandler} accept="image/jpeg,image/png" />
 			<p>{(this.state.selectedFile != null) ? this.state.selectedFile.name : "No selected file"}</p>
 			<button onClick={this.fileUploadHandler}>Upload</button>
 			</div>
-	  	</div>
+		: ""}
+		{(this.state.isLoggedIn === false) ?
+		<Redirect to='/login' /> : ""}
+		</div> 
 		);
 	}
 }

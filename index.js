@@ -167,6 +167,10 @@ app.get('/profile/', async (request,response) => {
 	}
 });
 
+app.get('/isLoggedIn', (request,response) => {
+	response.json({ isLoggedIn : (request.session.user != undefined)});
+});
+
 app.get('/photos/:number', async (request,response) => {
 /*	if (request.session.user == undefined) {
 		response.json({ msg : "Error" });

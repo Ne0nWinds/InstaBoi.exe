@@ -3,6 +3,7 @@ import './App.css';
 import { Link, Switch, Route, BrowserRouter } from 'react-router-dom';
 import ImageUpload from './ImageUpload.js';
 import Login_Reg from './Login_Reg.js';
+import Logout from './Logout.js';
 import Profile from './Profile.js';
 import Home from './Home.js';
 import Logo from './camera-retro-solid.svg';
@@ -28,7 +29,8 @@ const Main = () =>
 			<Route exact path="/profile" component={Profile} />
 			<Route exact path="/Upload" component={ImageUpload} />
 			<Route exact path="/Login" component={Login_Reg} />
-			<Route exact path="/" component={Home} />
+			<Route exact path="/Logout" component={Logout} />
+			<Route path="/*" component={Home} />
 		</Switch>
 	</main>
 
